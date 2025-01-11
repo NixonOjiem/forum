@@ -22,7 +22,7 @@ db.connect((err) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('Hello from the backend!');
+  res.send('Forum DB says Hello');
 });
 
 app.listen(port, () => {
