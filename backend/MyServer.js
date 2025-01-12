@@ -24,6 +24,22 @@ db.connect((err) => {
 //Signup Endpoint
 app.post('/signup', (req, res) => {
   const {first_name, last_name, email, username, password }= req.body;
+  const checkSql = 'SELECT * FROM users WHERE username =?';
+  db.query(checkSql, [username], (err, results) => {
+    if (err) {
+      return res.status(500).send('Error checking username');
+    }
+    if (results.length > 0) {
+      return res.status(400).send('Username already exists');
+    }
+    const insertUserSql = 'INSERT INTO users (first_name, last_name, email, username, password)';
+    db.query(insertUserSql, [first_name, last_name, email, username, password], (err, result) => {
+      if (err) {
+        return res.status(500).send('Error signing up');
+      }
+      res.send('User registered successfully');
+    });
+  })
 });
 
 app.get('/', (req, res) => {

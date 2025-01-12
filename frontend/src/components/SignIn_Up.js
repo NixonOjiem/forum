@@ -10,7 +10,7 @@ const SignIn_Up=()=> {
   const [username, setUserName]= useState('')
 
   const handleSubmit=()=>{
-    axios.post('http://localhost:3001/api/users', {})
+    axios.post('http://localhost:3001/signup', {})
   }
 
   return (
