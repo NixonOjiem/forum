@@ -21,6 +21,11 @@ db.connect((err) => {
   console.log('Connected to the FORUM database');
 });
 
+//Signup Endpoint
+app.post('/signup', (req, res) => {
+  const {first_name, last_name, email, username, password }= req.body;
+});
+
 app.get('/', (req, res) => {
   res.send('Forum DB says Hello');
 });
