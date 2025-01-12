@@ -1,7 +1,11 @@
 const express = require('express');
 const mysql = require('mysql2');
+const cors = require('cors');
 const app = express();
 const port = 3001;
+
+app.use(cors());
+app.use(express.json());
 
 // Create a connection to the database
 const db = mysql.createConnection({
@@ -32,7 +36,7 @@ app.post('/signup', (req, res) => {
     if (results.length > 0) {
       return res.status(400).send('Username already exists');
     }
-    const insertUserSql = 'INSERT INTO users (first_name, last_name, email, username, password)';
+    const insertUserSql = 'INSERT INTO users (first_name, last_name, email, username, password) VALUES (?,?,?,?,?)';
     db.query(insertUserSql, [first_name, last_name, email, username, password], (err, result) => {
       if (err) {
         return res.status(500).send('Error signing up');

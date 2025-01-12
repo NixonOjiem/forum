@@ -9,8 +9,19 @@ const SignIn_Up=()=> {
   const [last_name, setLastName]= useState('')
   const [username, setUserName]= useState('')
 
-  const handleSubmit=()=>{
-    axios.post('http://localhost:3001/signup', {})
+  const handleSubmit= async (e)=> {
+    e.preventDefault()
+    try{
+      const response = await axios.post('http://localhost:3001/signup', {first_name, last_name, email, username, password })
+      alert(response.data);
+    }
+    catch (error) {
+      if (error.response && error.response.status === 400) {
+        alert('username already exists');
+      } else {
+        alert('Error signing up');
+      }
+    }
   }
 
   return (
