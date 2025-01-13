@@ -16,6 +16,7 @@ const db = mysql.createConnection({
   port: 3307 // Use the port number you specified earlier
 });
 
+
 // Connect to the database
 db.connect((err) => {
   if (err) {
@@ -24,6 +25,7 @@ db.connect((err) => {
   }
   console.log('Connected to the FORUM database');
 });
+
 
 //Signup Endpoint
 app.post('/signup', (req, res) => {
@@ -46,10 +48,10 @@ app.post('/signup', (req, res) => {
   })
 });
 
+
 //Sign in end point
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
-
   // SQL query to check for the user
   const checkSql = 'SELECT * FROM users WHERE username = ? AND password = ?';
   

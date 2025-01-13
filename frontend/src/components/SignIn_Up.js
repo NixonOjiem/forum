@@ -88,12 +88,15 @@ const SignIn_Up=()=> {
           <button className='btn'type='submit'>Register</button>
           <button onClick={() => setShowSignup(false)}>Back to Sign In</button>
         </form>
+        
       </div>):(
 
         <div className='auth-container'>
+
           <div className='banner'>
-          <img src='/images/Login_question_with_background.jpg' alt='login picture with students' className='banner-pic'/>
-        </div>
+            <img src='/images/Login_question_with_background.jpg' alt='login picture with students' className='banner-pic'/>
+          </div>
+
           <form onSubmit={handleLogin} className='auth-form'>
             <h1>Sign in</h1>
             <label>Username</label>
@@ -105,6 +108,7 @@ const SignIn_Up=()=> {
             <button className='btn'type='submit'>Login</button>
             <button className='btn' onClick={()=>setShowSignup(true)}>Sign Up</button>
           </form>
+
         </div>
       )
     }

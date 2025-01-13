@@ -1,16 +1,26 @@
 /* Editing the signin and signup form */
+.auth-container{
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+    overflow-y: hidden;
+}
+
 .banner{
-    width: 65%;
+    width: 70%;
     height: 100vh;
     float: left;
 }
 .banner-pic{
     width:100%;
-    height: 100vh;
+    height: 100%;
 }
 .auth-form{
     float:right;
-    height: 100vh;
-    width: 30%;
+    height: auto;
+    width: 25%;
     margin-top: 30vh;
+    margin-left: 5px;
+    overflow-y: hidden;
+    overflow-y: hidden;
 }
