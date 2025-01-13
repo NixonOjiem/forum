@@ -46,6 +46,32 @@ app.post('/signup', (req, res) => {
   })
 });
 
+//Sign in end point
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  // SQL query to check for the user
+  const checkSql = 'SELECT * FROM users WHERE username = ? AND password = ?';
+  
+  db.query(checkSql, [username, password], (err, results) => {
+    if (err) {
+      // Handle database error
+      console.error(err);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+
+    // Check if user exists
+    if (results.length > 0) {
+      // User found, you can send back user data or a success message
+      const user = results[0]; // Assuming you want to return the first user found
+      return res.status(200).json({ message: 'Sign in successful', userId: user.user_id, username: user.username });
+    } else {
+      // User not found or incorrect credentials
+      return res.status(401).json({ message: 'Invalid username or password' });
+    }
+  });
+});
+
 app.get('/', (req, res) => {
   res.send('Forum DB says Hello');
 });

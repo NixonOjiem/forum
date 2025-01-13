@@ -10,29 +10,55 @@ const SignIn_Up=()=> {
   const [last_name, setLastName]= useState('')
   const [username, setUserName]= useState('')
   const [showSignup, setShowSignup] = useState(false)
+  const [errorMessage, setErrorMessage] = useState(''); // State for error messages
+  const [successMessage, setSuccessMessage] = useState(''); // State for success messages
 
   const handleSignup= async (e)=> {
     e.preventDefault()
     try{
       const response = await axios.post('http://localhost:3001/signup', {first_name, last_name, email, username, password })
       alert(response.data);
+      setSuccessMessage('Registration successful!');
     }
     catch (error) {
       if (error.response && error.response.status === 400) {
         alert('username already exists');
+        setErrorMessage('Username already exists');
       } else {
         alert('Error signing up');
+        setErrorMessage('Error signing up');
       }
     }
   }
 
-  const handleLogin = async (e)=> {
-    e.preventDefault()
-    try{
-      const response = await axios.post('http://localhost:3001/login', {email, password} )
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    console.log("Calling handlelogin")
+    setErrorMessage(''); // Clear previous error messages
+    setSuccessMessage(''); // Clear previous success messages
+  
+    try {
+      const response = await axios.post('http://localhost:3001/login', { username, password });
+      
+      // Assuming the response contains a success message and user data
+      if (response.data.userId) {
+        setSuccessMessage('Login successful!'); // Set success message
+        console.log('Login successful:', response.data); // Log the successful login details
+        alert('Login successful! Welcome, ' + response.data.username); // Alert the user
+        // Store user data in localStorage or context
+        localStorage.setItem('userId', response.data.userId);
+        localStorage.setItem('username_local', response.data.username);
+        // Redirect to another page if needed
+        // navigate('/home'); // Uncomment if using react-router
+      }
+    } catch (error) {
+      if (error.response && error.response.status === 401) {
+        setErrorMessage('Invalid username or password'); // Set error message for invalid credentials
+      } else {
+        setErrorMessage('An error occurred. Please try again later.'); // General error message
+      }
     }
-    catch(error){}
-  }
+  };
 
   return (
     <div>{ showSignup? (
