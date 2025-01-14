@@ -72,7 +72,7 @@ const SignIn_Up=()=> {
       <div className='auth-Container'>
 
         <div className='banner'>
-          <img src='/images/Login_question_with_background.jpg' alt='login picture with students' className='banner-pic'/>
+          <img src='/images/13379598_5210980.jpg' alt='login picture with students' className='banner-pic'/>
         </div>
 
         <form onSubmit={handleSignup} className='auth-form'>
@@ -101,7 +101,7 @@ const SignIn_Up=()=> {
         <div className='auth-container'>
 
           <div className='banner'>
-            <img src='/images/Login_question_with_background.jpg' alt='login picture with students' className='banner-pic'/>
+            <img src='/images/13379598_5210980.jpg' alt='login picture with students' className='banner-pic'/>
           </div>
 
           <form onSubmit={handleLogin} className='auth-form'>
