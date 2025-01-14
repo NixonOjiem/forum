@@ -25,6 +25,7 @@
     overflow-y: hidden;
     overflow-y: hidden;
 }
+/*End of Sign in and sign up page*/
 
 /*Editng the header component*/
 .header {
@@ -65,3 +66,4 @@
     color: rgb(36, 36, 129);
     cursor: pointer;
 }
+/*End of editing the header component*/
