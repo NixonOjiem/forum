@@ -1,5 +1,6 @@
 import React, {useState}from 'react'
 import axios from 'axios'
+import {useNavigate} from 'react-router-dom'
 
 
 const SignIn_Up=()=> {
@@ -12,6 +13,8 @@ const SignIn_Up=()=> {
   const [showSignup, setShowSignup] = useState(false)
   const [errorMessage, setErrorMessage] = useState(''); // State for error messages
   const [successMessage, setSuccessMessage] = useState(''); // State for success messages
+
+  const navigate = useNavigate();
 
   const handleSignup= async (e)=> {
     e.preventDefault()
@@ -48,7 +51,11 @@ const SignIn_Up=()=> {
         // Store user data in localStorage or context
         localStorage.setItem('userId', response.data.userId);
         localStorage.setItem('username_local', response.data.username);
+        const isLoggedIn = true;
         // Redirect to another page if needed
+        if (isLoggedIn){
+          navigate('/forum');
+        }
         // navigate('/home'); // Uncomment if using react-router
       }
     } catch (error) {
