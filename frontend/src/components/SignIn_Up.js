@@ -78,19 +78,19 @@ const SignIn_Up=()=> {
         <form onSubmit={handleSignup} className='auth-form'>
           <h1 className='heading-registration'>Registration Form</h1>
           <label className='signup-label'>First Name:</label>
-          <input type="text" value={first_name} onChange={(e)=>setFirstName(e.target.value)} /> 
+          <input type="text" required value={first_name} onChange={(e)=>setFirstName(e.target.value)} placeholder='Enter your first name'className="mordern-input"/> 
           <br />
           <label className='signup-label'>Last Name:</label>
-          <input type='text' value={last_name} onChange={(e)=>setLastName(e.target.value)} />
+          <input type='text' required value={last_name} onChange={(e)=>setLastName(e.target.value)} placeholder='Enter your last name'className="mordern-input"/>
           <br />
           <label className='signup-label'>Email:</label>
-          <input type='email' value={email} onChange={(e)=>setEmail(e.target.value)} />
+          <input type='email' required value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Enter your email'className="mordern-input"/>
           <br />
           <label className='signup-label'>Username:</label>
-          <input type='text' value={username} onChange={(e)=>setUserName(e.target.value)} />
+          <input type='text' required value={username} onChange={(e)=>setUserName(e.target.value)} placeholder='Enter your username'className="mordern-input"/>
           <br />
           <label className='signup-label'>Password:</label>
-          <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
+          <input type='password' required value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Enter your password'className="mordern-input"/>
           <br />
           <button className='btn'type='submit'>Register</button>
           <button onClick={() => setShowSignup(false)}>Back to Sign In</button>
@@ -107,10 +107,10 @@ const SignIn_Up=()=> {
           <form onSubmit={handleLogin} className='auth-form'>
             <h1>Sign in</h1>
             <label>Username</label>
-            <input type='text' value={username} onChange={(e)=>setUserName(e.target.value)} />
+            <input type='text' value={username} onChange={(e)=>setUserName(e.target.value)} placeholder='Enter username'className="mordern-input"/>
             <br />
             <label>Password</label>
-            <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)} />
+            <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Enter password'className="mordern-input"/>
             <br />
             <button className='btn'type='submit'>Login</button>
             <button className='btn' onClick={()=>setShowSignup(true)}>Sign Up</button>

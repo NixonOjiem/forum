@@ -18,34 +18,52 @@
 }
 .auth-form{
     float:right;
-    height: auto;
+    height: 70%;
     width: 25%;
-    margin-top: 30vh;
-    margin-left: 5px;
+    /* margin-top: 30vh; */
+    margin-left: 0px;
     overflow-y: hidden;
     overflow-y: hidden;
+    display: flex; 
+    flex-direction: column; 
+    gap: 5px;
+    max-height: 100%;
 }
+
+.mordern-input{
+    border: none; 
+    border-bottom: 2px solid #ccc; 
+    padding: 10px; 
+    font-size: 16px; 
+    outline: none; 
+    transition: border-color 0.3s; 
+    background-color: transparent;
+}
+
+.mordern-input:focus { border-bottom-color: #007BFF; }
 /*End of Sign in and sign up page*/
 
 /*Editng the header component*/
 .header {
-    width: 100%;
+    width: 100%; /* Changed from 100vw to 100% */
     height: auto;
     display: flex;
     align-items: center;
     background-color: rgb(176, 217, 255);
     padding: 0 20px; /* Optional: Add some padding for better spacing */
+    
 }
 
 .header h1 {
     margin: 0;
-    color: rgb(36, 36, 129);;
+    color: rgb(36, 36, 129);
 }
 
 .nav-container {
     flex-grow: 1;
     display: flex;
     justify-content: center;
+    
 }
 
 .header ul {
@@ -66,4 +84,15 @@
     color: rgb(36, 36, 129);
     cursor: pointer;
 }
+.icon:hover{
+    color: rgb(246, 239, 239);
+    transition-duration: 0.5s;
+}
 /*End of editing the header component*/
+
+/*Forum Container*/
+.forum-container {
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+}

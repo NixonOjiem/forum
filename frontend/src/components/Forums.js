@@ -3,7 +3,7 @@ import Header from './Header'
 
 function Forums() {
   return (
-    <div>
+    <div className='forum-container'>
         <Header />
     </div>
   )
