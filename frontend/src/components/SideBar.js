@@ -7,6 +7,7 @@ import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import { faIdBadge } from '@fortawesome/free-solid-svg-icons';
 
+
 function SideBar() {
   return (
     <div className='sidebar'>
@@ -15,6 +16,7 @@ function SideBar() {
             <li><FontAwesomeIcon icon={faTags} className='sidebar-icon' />Tags</li>
             <li><FontAwesomeIcon icon={faUsers} className='sidebar-icon' />Users</li>
             <li><FontAwesomeIcon icon={faIdBadge} className='sidebar-icon' />Badges</li>
+           
         </div>
     </div>
   )

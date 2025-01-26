@@ -5,6 +5,8 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons';
 import {faHouse} from '@fortawesome/free-solid-svg-icons';
 import { faNewspaper } from '@fortawesome/free-solid-svg-icons';
 import { faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
+import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons';
+
 library.add(faHouse);
 
 function Header() {
@@ -16,7 +18,7 @@ function Header() {
         <ul>
             <li><FontAwesomeIcon icon={faPeopleGroup} className='icon'/></li>
             <li><FontAwesomeIcon icon="fa-solid fa-house" className='icon'/></li>
-            <li><FontAwesomeIcon icon={faNewspaper} className='icon'/></li>
+            <li><FontAwesomeIcon icon={faArrowTrendUp} className='icon'/></li>
         </ul>
     </div>
 </div>

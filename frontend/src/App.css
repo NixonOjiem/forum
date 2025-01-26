@@ -62,8 +62,9 @@
 /*Editng the header component*/
 .header {
     width: 100%; /* Changed from 100vw to 100% */
-    height: auto;
+    height: 50px;
     display: flex;
+    position: fixed;
     align-items: center;
     background-color: #250b7a;
     padding: 0 20px; /* Optional: Add some padding for better spacing */
@@ -115,3 +116,18 @@
 /*End of editing the forum container*/
 
 /*Editing the side bar*/
+.sidebar{
+    margin-top: 50px;
+    width: 20%;
+    /* background-color: aquamarine; */
+    border-right: 2px solid #030202;
+    height: 80vh;
+}
+.container-side li{
+    list-style: none;
+    padding: 10px;
+}
+.sidebar-icon{
+    font-size: 20px;
+}
+/*End of editing the side bar*/
