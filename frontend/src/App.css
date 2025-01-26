@@ -65,14 +65,14 @@
     height: auto;
     display: flex;
     align-items: center;
-    background-color: rgb(176, 217, 255);
+    background-color: #250b7a;
     padding: 0 20px; /* Optional: Add some padding for better spacing */
     
 }
 
 .header h1 {
     margin: 0;
-    color: rgb(36, 36, 129);
+    color: aliceblue
 }
 
 .nav-container {
@@ -97,11 +97,11 @@
 
 .icon {
     font-size: 30px;
-    color: rgb(36, 36, 129);
+    color: aliceblue;
     cursor: pointer;
 }
 .icon:hover{
-    color: rgb(246, 239, 239);
+    color:rgb(252, 244, 184);
     transition-duration: 0.5s;
 }
 /*End of editing the header component*/
@@ -112,3 +112,6 @@
     height: auto;
     overflow-x: hidden;
 }
+/*End of editing the forum container*/
+
+/*Editing the side bar*/

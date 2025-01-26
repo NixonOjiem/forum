@@ -8,7 +8,7 @@ function Forums() {
   return (
     <div className='forum-container'>
         <Header /> 
-        {/* <EntireForum /> */}
+        <SideBar />
     </div>
   )
 }
