@@ -92,8 +92,8 @@ const SignIn_Up=()=> {
           <label className='signup-label'>Password:</label>
           <input type='password' required value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Enter your password'className="mordern-input"/>
           <br />
-          <button className='btn'type='submit'>Register</button>
-          <button onClick={() => setShowSignup(false)}>Back to Sign In</button>
+          <button className='btn-sign'type='submit'>Register</button>
+          <button className="btn-sign" onClick={() => setShowSignup(false)}>Sign In</button>
         </form>
         
       </div>):(
@@ -112,8 +112,8 @@ const SignIn_Up=()=> {
             <label>Password</label>
             <input type='password' value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Enter password'className="mordern-input"/>
             <br />
-            <button className='btn'type='submit'>Login</button>
-            <button className='btn' onClick={()=>setShowSignup(true)}>Sign Up</button>
+            <button className='btn-sign'type='submit'>Login</button>
+            <button className='btn-sign' onClick={()=>setShowSignup(true)}>Sign Up</button>
           </form>
 
         </div>

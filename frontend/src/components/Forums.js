@@ -7,8 +7,8 @@ import EntireForum from './EntireForum'
 function Forums() {
   return (
     <div className='forum-container'>
-        <Header />
-        <EntireForum />
+        <Header /> 
+        {/* <EntireForum /> */}
     </div>
   )
 }
