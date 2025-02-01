@@ -122,7 +122,9 @@
     /* background-color: aquamarine; */
     border-right: 2px solid #030202;
     height: 80vh;
+    float: left;
 }
+
 .container-side li{
     list-style: none;
     padding: 10px;
@@ -131,3 +133,13 @@
     font-size: 20px;
 }
 /*End of editing the side bar*/
+
+/*End of right-content the side bar*/
+.Right-content{
+    float: right;
+    width: 70%;
+    margin-left:21%;
+    position: absolute;
+    margin-top: 50px;
+}
+/*End of right-content the side bar*/

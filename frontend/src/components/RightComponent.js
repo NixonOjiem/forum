@@ -2,7 +2,7 @@ import React from 'react'
 
 function RightComponent() {
   return (
-    <div>RightComponent</div>
+    <div className='Right-content'>RightComponent</div>
   )
 }
 
