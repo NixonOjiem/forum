@@ -1,8 +1,10 @@
 import React from 'react'
 
-function RightComponent() {
+const RightComponent= ({content}) =>{
   return (
-    <div className='Right-content'>RightComponent</div>
+    <div className='Right-content'>
+        {content}
+    </div>
   )
 }
 
