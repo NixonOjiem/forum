@@ -12,14 +12,14 @@ import Users from './Users';
 import Badges from './Badges';
 
 
-const SideBar= ({onContentChnage})=> {
+const SideBar= ({onContentChange})=> {
   return (
     <div className='sidebar'>
         <div className='container-side'>
-            <li onClick={()=> onContentChnage(<QuestionList />)}><FontAwesomeIcon icon={faQuestionCircle} className='sidebar-icon' />  Questions</li>
-            <li onClick={()=> onContentChnage(<Tags />)}><FontAwesomeIcon icon={faTags} className='sidebar-icon' />  Tags</li>
-            <li onClick={()=> onContentChnage(<Users />)}><FontAwesomeIcon icon={faUsers} className='sidebar-icon' />Users</li>
-            <li onClick={()=> onContentChnage(<Badges />)}><FontAwesomeIcon icon={faIdBadge} className='sidebar-icon' />  Badges</li>
+            <li onClick={()=> onContentChange(<QuestionList />)}><FontAwesomeIcon icon={faQuestionCircle} className='sidebar-icon' />  Questions</li>
+            <li onClick={()=> onContentChange(<Tags />)}><FontAwesomeIcon icon={faTags} className='sidebar-icon' />  Tags</li>
+            <li onClick={()=> onContentChange(<Users />)}><FontAwesomeIcon icon={faUsers} className='sidebar-icon' />Users</li>
+            <li onClick={()=> onContentChange(<Badges />)}><FontAwesomeIcon icon={faIdBadge} className='sidebar-icon' />  Badges</li>
         </div>
     </div>
   )
