@@ -6,10 +6,7 @@ import EntireForum from './EntireForum'
 import RightComponent from './RightComponent'
 
 function Forums() {
-  const [content, setContent] = useState(<div>
-    <h1>Forum for any content</h1>
-    <p>Enjoy the forum</p>
-  </div>)
+  const [content, setContent] = useState(<QuestionList />)
 
   const handleContentChange = (newContent) => {
     setContent(newContent);

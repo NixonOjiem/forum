@@ -123,6 +123,7 @@
     border-right: 2px solid #030202;
     height: 90vh;
     float: left;
+    position: fixed;
 }
 .container-side{
     /* text-align: center; */
