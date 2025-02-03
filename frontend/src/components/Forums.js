@@ -18,7 +18,7 @@ function Forums() {
   return (
     <div className='forum-container'>
         <Header onContentChange={handleContentChange}/> 
-        <SideBar onContentChnage = {handleContentChange}/>
+        <SideBar onContentChange = {handleContentChange}/>
         <RightComponent content = {content}/>
     </div>
   )

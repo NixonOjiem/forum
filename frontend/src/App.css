@@ -118,20 +118,27 @@
 /*Editing the side bar*/
 .sidebar{
     margin-top: 50px;
-    width: 20%;
+    width: 15%;
     /* background-color: aquamarine; */
     border-right: 2px solid #030202;
-    height: 80vh;
+    height: 90vh;
     float: left;
 }
-
+.container-side{
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+}
 .container-side li{
     list-style: none;
     padding: 10px;
+    cursor: pointer;
+    margin-top: 5%;
+    margin-left: 20%;
+    
 }
 .sidebar-icon{
     font-size: 20px;
-    cursor: pointer;
 }
 /*End of editing the side bar*/
 

@@ -20,6 +20,8 @@ const SideBar= ({onContentChange})=> {
             <li onClick={()=> onContentChange(<Tags />)}><FontAwesomeIcon icon={faTags} className='sidebar-icon' />  Tags</li>
             <li onClick={()=> onContentChange(<Users />)}><FontAwesomeIcon icon={faUsers} className='sidebar-icon' />Users</li>
             <li onClick={()=> onContentChange(<Badges />)}><FontAwesomeIcon icon={faIdBadge} className='sidebar-icon' />  Badges</li>
+            <li>onContentChange</li>
+            <li>test 2</li>
         </div>
     </div>
   )
