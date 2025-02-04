@@ -190,4 +190,7 @@
     transition-duration: 0.5s;
     transition-timing-function: ease-in-out;
 }
+.Select-Choice{
+    width: 500px;
+}
 /*End of Editing the Ask A Question page*/
