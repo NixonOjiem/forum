@@ -6,10 +6,12 @@ import { faQuestionCircle } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import {faUser} from '@fortawesome/free-solid-svg-icons';
 import { faIdBadge } from '@fortawesome/free-solid-svg-icons';
+import { faQuestion } from '@fortawesome/free-solid-svg-icons';
 import QuestionList from './QuestionList';
 import Tags from './Tags';
 import Users from './Users';
 import Badges from './Badges';
+import AskQuestion from './AskQuestion';
 
 
 const SideBar= ({onContentChange})=> {
@@ -20,8 +22,7 @@ const SideBar= ({onContentChange})=> {
             <li onClick={()=> onContentChange(<Tags />)}><FontAwesomeIcon icon={faTags} className='sidebar-icon' />  Tags</li>
             <li onClick={()=> onContentChange(<Users />)}><FontAwesomeIcon icon={faUsers} className='sidebar-icon' />Users</li>
             <li onClick={()=> onContentChange(<Badges />)}><FontAwesomeIcon icon={faIdBadge} className='sidebar-icon' />  Badges</li>
-            <li>onContentChange</li>
-            <li>test 2</li>
+            <li onClick={()=> onContentChange(<AskQuestion />)}><FontAwesomeIcon icon={faQuestion} className='sidebar-icon' /> Ask a Question</li>
         </div>
     </div>
   )

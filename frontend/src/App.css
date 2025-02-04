@@ -147,9 +147,9 @@
 .Right-content{
     float: right;
     width: 70%;
-    margin-left:21%;
+    margin-left:16%;
     position: absolute;
     margin-top: 50px;
-    background-color: #007BFF;
+    /* background-color: #007BFF; */
 }
 /*End of right-content the side bar*/
