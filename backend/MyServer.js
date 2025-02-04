@@ -74,6 +74,19 @@ app.post('/login', (req, res) => {
   });
 });
 
+//Post questions endpoint
+app.post('/add-questions', (req, res) => {
+  const {title, question, tag}= req.body;
+  const insertIntoQuestionSql = 'INSERT INTO questions (title, question, tag ) VALUES (?,?,?)';
+
+  db.query(insertIntoQuestionSql, [title, question, tag], (err, result) => {
+    if (err) {
+      return res.status(500).send('Error adding question');
+    }
+    res.send('Question added successfully');
+  });
+})
+
 app.get('/', (req, res) => {
   res.send('Forum DB says Hello');
 });
