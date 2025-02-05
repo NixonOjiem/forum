@@ -97,7 +97,13 @@ app.get('/question-list', (req, res) => {
 });
 
 //Endpoint for each individual question
-
+app.get('/question/:id', (req, res) => {
+  const sql = 'SELECT * FROM questions WHERE question_id = ?';
+  db.query(sql, [req.params.id], (err, result) => {
+    if (err) throw err;
+    res.json(result);
+  });
+});
 
 
 
