@@ -87,6 +87,20 @@ app.post('/add-questions', (req, res) => {
   });
 })
 
+//Endpoint to fetch title for the questions
+app.get('/question-list', (req, res) => {
+  const sql = 'SELECT question_id, Title FROM questions';
+  db.query(sql, (err, results) => {
+    if (err) throw err;
+    res.json(results);
+  });
+});
+
+//Endpoint for each individual question
+
+
+
+
 app.get('/', (req, res) => {
   res.send('Forum DB says Hello');
 });

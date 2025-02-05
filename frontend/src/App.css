@@ -194,3 +194,11 @@
     width: 500px;
 }
 /*End of Editing the Ask A Question page*/
+
+/* Start of editing the questions list page */
+.title-list{
+    list-style: none;
+    padding: 10px;
+    cursor: pointer;
+}
+/* end of editing the questions list page */
