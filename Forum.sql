@@ -20,3 +20,23 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL
 );
 
+--create table comments
+Drop table if exists comments;
+CREATE TABLE comments (
+  comment_id INT AUTO_INCREMENT PRIMARY KEY,
+  question_id INT,
+  comment TEXT,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (question_id) REFERENCES questions(question_id)
+);
+
+--create table questions
+Drop Table if exists questions;
+
+CREATE TABLE questions (
+question_id INT AUTO_INCREMENT PRIMARY KEY,
+Title varchar(100),
+question VARCHAR(100),
+tag varchar(100)
+);
+
