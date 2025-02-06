@@ -24,6 +24,7 @@ function QuestionList() {
       .then(data => {
         console.log('Fetched question:', data);
         setQuestion(data[0]);
+        fetchComments(id);
       })
       .catch(error => console.error('Error fetching question:', error));
   };
@@ -40,6 +41,7 @@ function QuestionList() {
 
   const handleBackButtonClick = () => {
     setQuestion(null);
+    setComments([]);
   };
 
   const handleCommentSubmit = (e) => {
@@ -61,7 +63,7 @@ function QuestionList() {
   };
 
   return (
-<div>
+    <div>
       <h1>QuestionList</h1>
       {question ? (
         <div>
@@ -74,7 +76,7 @@ function QuestionList() {
               <li key={comment.comment_id}>{comment.comment}</li>
             ))}
           </ul>
-          <form onSubmit={handleCommentSubmit} className="comment-form">
+          <form onSubmit={handleCommentSubmit}>
             <textarea
               value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
