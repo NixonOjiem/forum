@@ -114,7 +114,24 @@ app.get('/users', (req, res)=>{
   });
 });
 
+// Endpoint to fetch comments for a question
+app.get('/comments/:question_id', (req, res) => {
+  const sql = 'SELECT * FROM comments WHERE question_id = ?';
+  db.query(sql, [req.params.question_id], (err, results) => {
+    if (err) throw err;
+    res.json(results);
+  });
+});
 
+// Endpoint to add a new comment
+app.post('/comments', (req, res) => {
+  const { question_id, comment } = req.body;
+  const sql = 'INSERT INTO comments (question_id, comment) VALUES (?, ?)';
+  db.query(sql, [question_id, comment], (err, result) => {
+    if (err) throw err;
+    res.json({ success: true, comment_id: result.insertId });
+  });
+});
 
 app.get('/', (req, res) => {
   res.send('Forum DB says Hello');
