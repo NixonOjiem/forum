@@ -105,6 +105,15 @@ app.get('/question/:id', (req, res) => {
   });
 });
 
+//End point to fetch users.
+app.get('/users', (req, res)=>{
+  const sql = 'SELECT * FROM users';
+  db.query(sql,(err, results)=>{
+    if(err) throw err;
+    res.json(results);
+  });
+});
+
 
 
 app.get('/', (req, res) => {

@@ -32,7 +32,7 @@ function QuestionList() {
 
   return (
     <div>
-      <h1>QuestionList</h1>
+      <h1>Questions</h1>
       {question ? (
         <div>
           <button onClick={handleBackButtonClick}>Back to List</button>
@@ -42,7 +42,9 @@ function QuestionList() {
       ) : (
         <ul>
           {titles.map(title => (
-            <li onClick={() => handleTitleClicked(title.question_id)} key={title.question_id} className="title-list">
+            <li onClick={() => handleTitleClicked(title.question_id)} 
+            key={title.question_id} 
+            className="title-list">
               {title.Title}
             </li>
           ))}
