@@ -12,6 +12,9 @@ import Tags from './Tags';
 import Users from './Users';
 import Badges from './Badges';
 import AskQuestion from './AskQuestion';
+import RisingQuestions from './RisingQuestions';
+import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons';
+
 
 
 const SideBar= ({onContentChange})=> {
@@ -19,8 +22,9 @@ const SideBar= ({onContentChange})=> {
     <div className='sidebar'>
         <div className='container-side'>
             <li onClick={()=> onContentChange(<QuestionList />)}><FontAwesomeIcon icon={faQuestionCircle} className='sidebar-icon' />  Questions</li>
+            <li onClick={()=> onContentChange(<RisingQuestions />)}><FontAwesomeIcon icon={faArrowTrendUp} className='icon'/> Trending</li>
             <li onClick={()=> onContentChange(<Tags />)}><FontAwesomeIcon icon={faTags} className='sidebar-icon' />  Tags</li>
-            <li onClick={()=> onContentChange(<Users />)}><FontAwesomeIcon icon={faUsers} className='sidebar-icon' />Users</li>
+            <li onClick={()=> onContentChange(<Users />)}><FontAwesomeIcon icon={faUser} className='sidebar-icon' />User</li>
             <li onClick={()=> onContentChange(<Badges />)}><FontAwesomeIcon icon={faIdBadge} className='sidebar-icon' />  Badges</li>
             <li onClick={()=> onContentChange(<AskQuestion />)}><FontAwesomeIcon icon={faQuestion} className='sidebar-icon' /> Ask a Question</li>
         </div>

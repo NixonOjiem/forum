@@ -23,13 +23,14 @@ const Header=({onContentChange})=> {
 <div className='header'>
     <h1>Questy</h1>
     <div className='nav-container'>
-        <ul>
+        {/* <ul>
             <li onClick={()=> onContentChange(<Users />)}><FontAwesomeIcon icon={faPeopleGroup} className='icon'/></li>
             <li onClick={()=> onContentChange(<QuestionList />)}><FontAwesomeIcon icon="fa-solid fa-house" className='icon'/></li>
             <li onClick={()=> onContentChange(<RisingQuestions />)}><FontAwesomeIcon icon={faArrowTrendUp} className='icon'/></li>
-        </ul>
+        </ul> */}
+        <input type="text" placeholder="Search.." className='search-box'></input>
     </div>
-    <h1 onClick={handleLogOut}>LogOut</h1>
+    <h2 onClick={handleLogOut}>LogOut</h2>
 </div>
   )
 }

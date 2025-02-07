@@ -97,13 +97,27 @@
 }
 
 .icon {
-    font-size: 30px;
-    color: aliceblue;
+    font-size: 20px;
+    color: rgb(1, 5, 8);
     cursor: pointer;
 }
 .icon:hover{
     color:rgb(252, 244, 184);
     transition-duration: 0.5s;
+}
+h2{
+    float: right;
+    margin: 30px;
+    color: aliceblue;
+    cursor: pointer;
+}
+.search-box{
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #f7f8fa;
+    border: 0px solid #f7f8fa;
+    text-align: center;
 }
 /*End of editing the header component*/
 
