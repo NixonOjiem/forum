@@ -9,17 +9,24 @@ function QuestionList() {
   const [question, setQuestion] = useState(null); // Current question object
   const [comments, setComments] = useState([]); // Array of comments for the current question
   const [newComment, setNewComment] = useState(''); // Text of the new comment being added
+  const [username, setUsername] = useState('')
+
+
+
 
   // Use the useEffect hook to fetch the question list data when the component mounts
-  useEffect(() => {
+    useEffect(() => {
     // Fetch the question list data from the server
     fetch('http://localhost:3001/question-list')
+       
       .then(response => response.json()) // Parse the response as JSON
       .then(data => {
         // Log the fetched data to the console
         console.log('Fetched data:', data);
         // Update the titles state variable with the fetched data
         setTitles(data);
+        const storedUsername = localStorage.getItem('username_local');
+        setUsername(storedUsername);
       })
       .catch(error => {
         // Log any errors that occur during the fetch operation
@@ -27,10 +34,12 @@ function QuestionList() {
       });
   }, []); // The empty dependency array means this effect will only run once, when the component mounts
 
+  
   // Define a function to handle the title click event
   const handleTitleClicked = (id) => {
     // Log a message to the console to indicate that the title was clicked
     console.log('loading question');
+    console.log(username);
     // Fetch the question data from the server
     fetch(`http://localhost:3001/question/${id}`)
       .then(response => response.json()) // Parse the response as JSON

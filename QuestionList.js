@@ -6,9 +6,13 @@ function QuestionList() {
   const [question, setQuestion] = useState(null);
   const [comments, setComments] = useState([]);
   const [newComment, setNewComment] = useState('');
+  const [username, setUserName] = useState('');
+  
 
   useEffect(() => {
     fetch('http://localhost:3001/question-list')
+    const storedUserName = localStorage.getItem('username_local')
+    setUserName(storedUserName)
       .then(response => response.json())
       .then(data => {
         console.log('Fetched data:', data);
@@ -18,7 +22,8 @@ function QuestionList() {
   }, []);
 
   const handleTitleClicked = (id) => {
-    console.log('loading question');
+    console.log('loading question after handleTitleClicked');
+    console.log('321');
     fetch(`http://localhost:3001/question/${id}`)
       .then(response => response.json())
       .then(data => {
@@ -91,6 +96,7 @@ function QuestionList() {
           {titles.map(title => (
             <li onClick={() => handleTitleClicked(title.question_id)} key={title.question_id} className="title-list">
               {title.Title}
+              {console.log(storedUserName)}
             </li>
           ))}
         </ul>

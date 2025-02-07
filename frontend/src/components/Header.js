@@ -9,10 +9,15 @@ import { faArrowTrendUp } from '@fortawesome/free-solid-svg-icons';
 import Users from './Users';
 import QuestionList from './QuestionList';
 import RisingQuestions from './RisingQuestions';
+import { useNavigate } from 'react-router-dom';
 
 library.add(faHouse);
 
 const Header=({onContentChange})=> {
+  const navigate = useNavigate();
+  const handleLogOut=()=>{
+    navigate('/');
+  }
 
   return (
 <div className='header'>
@@ -24,6 +29,7 @@ const Header=({onContentChange})=> {
             <li onClick={()=> onContentChange(<RisingQuestions />)}><FontAwesomeIcon icon={faArrowTrendUp} className='icon'/></li>
         </ul>
     </div>
+    <h1 onClick={handleLogOut}>LogOut</h1>
 </div>
   )
 }

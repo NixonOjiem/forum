@@ -47,7 +47,7 @@ const SignIn_Up=()=> {
       if (response.data.userId) {
         setSuccessMessage('Login successful!'); // Set success message
         console.log('Login successful:', response.data); // Log the successful login details
-        alert('Login successful! Welcome, ' + response.data.username); // Alert the user
+        // alert('Login successful! Welcome, ' + response.data.username); // Alert the user
         // Store user data in localStorage or context
         localStorage.setItem('userId', response.data.userId);
         localStorage.setItem('username_local', response.data.username);
