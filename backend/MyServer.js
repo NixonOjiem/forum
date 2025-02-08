@@ -134,6 +134,22 @@ app.post('/comments', (req, res) => {
   });
 });
 
+//EndPoint for fetching trending questions
+app.get('/trending-questions', (req, res) => {
+  const sql = `
+    SELECT q.question_id, q.Title, q.question, q.tag, COUNT(c.comment_id) AS comment_count
+    FROM questions q
+    LEFT JOIN comments c ON q.question_id = c.question_id
+    GROUP BY q.question_id
+    ORDER BY comment_count DESC
+    LIMIT 10;  -- Adjust the limit as needed
+  `;
+  db.query(sql, (err, results) => {
+    if (err) throw err;
+    res.json(results);
+  });
+});
+
 app.get('/', (req, res) => {
   res.send('Forum DB says Hello');
 });

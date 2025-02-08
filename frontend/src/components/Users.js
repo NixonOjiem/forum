@@ -18,14 +18,13 @@ function Users() {
 
   return (
     <div>
-      <h1>Users</h1>
+      <h1>User Profile</h1>
       {
         <ul>
           <li>First Name: {users.first_name}</li>
           <li>Last Name: {users.last_name}</li>
           <li>Email Name: {users.email}</li>
           <li>User Name: {users.username}</li>
-         
         </ul>
       }
     </div>
