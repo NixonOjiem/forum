@@ -56,7 +56,7 @@ function QuestionList() {
   };
 
   // Define a function to fetch the comments for the current question
-  const fetchComments = (question_id) => {
+   const fetchComments = (question_id) => {
     // Fetch the comments data from the server
     fetch(`http://localhost:3001/comments/${question_id}`)
       .then(response => response.json()) // Parse the response as JSON
