@@ -105,12 +105,13 @@ app.get('/question/:id', (req, res) => {
   });
 });
 
-//End point to fetch users.
-app.get('/users', (req, res)=>{
-  const sql = 'SELECT * FROM users';
-  db.query(sql,(err, results)=>{
-    if(err) throw err;
-    res.json(results);
+//End point to fetch user.
+app.get('/users/:id', (req, res) => {
+  const userId = req.params.id;
+  const sql = 'SELECT * FROM users WHERE user_id = ?';
+  db.query(sql, [userId], (err, results) => {
+    if (err) throw err;
+    res.json(results[0]); // Assuming you want to return a single user object
   });
 });
 
