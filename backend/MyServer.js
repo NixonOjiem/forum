@@ -150,6 +150,17 @@ app.get('/trending-questions', (req, res) => {
   });
 });
 
+//Endpoint for searching questions
+app.get('/search', (req, res) => {
+  const searchText = req.query.q;
+  const sql = `SELECT * FROM questions WHERE Title LIKE ? OR question LIKE ? OR tag LIKE ?`;
+  const values = [`%${searchText}%`, `%${searchText}%`, `%${searchText}%`];
+  db.query(sql, values, (err, results) => {
+    if (err) throw err;
+    res.json(results);
+  });
+});
+
 app.get('/', (req, res) => {
   res.send('Forum DB says Hello');
 });

@@ -49,7 +49,7 @@ function RisingQuestions() {
     <div>
       <h1>Trending Questions</h1>
       {showOneQuestion ? (
-        <div>
+        <div className='question-container'>
           <h1>{question.Title}</h1>
           <p>{question.question}</p>
           <ul>
@@ -61,7 +61,7 @@ function RisingQuestions() {
       ) : (
         <ul>
           {trendingQuestions.map(question => (
-            <li key={question.question_id} onClick={() => questionClicked(question.question_id)}>
+            <li key={question.question_id} className='question-list' onClick={() => questionClicked(question.question_id)}>
               <h2>{question.Title}</h2>
               <p>{question.question}</p>
               <p>Tag: {question.tag}</p>
