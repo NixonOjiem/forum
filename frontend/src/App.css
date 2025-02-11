@@ -119,6 +119,20 @@ h2{
     border: 0px solid #f7f8fa;
     text-align: center;
 }
+.search-button{
+    width: 30px; /* Adjust the size as needed */
+    height: 30px; /* Adjust the size as needed */
+    border-radius: 50%;
+    background-color: aliceblue;
+    color: #250b7a;
+    border: 0px;
+}
+
+.search-icon{
+    font-size: 20px;
+    padding: 10px;
+    color: aliceblue;
+}
 /*End of editing the header component*/
 
 /*Forum Container*/

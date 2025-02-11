@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchResults from './SearchResults';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
 const Header = ({ onContentChange }) => {
   const [searchText, setSearchText] = useState('');
@@ -42,7 +44,7 @@ const Header = ({ onContentChange }) => {
           onChange={handleSearch}
           value={searchText}
         />
-        <button className='search-button' onClick={handleSearchButtonClick}>Search</button>
+        <FontAwesomeIcon icon={faMagnifyingGlass} onClick={handleSearchButtonClick} className='search-icon'/>
       </div>
       <h2 onClick={handleLogOut}>LogOut</h2>
     </div>
