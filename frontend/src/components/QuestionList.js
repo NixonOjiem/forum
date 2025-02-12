@@ -1,6 +1,7 @@
 // Import the necessary dependencies from React
 import { useState, useEffect } from "react";
 import React from 'react';
+import { useNavigate } from "react-router-dom";
 
 // Define the QuestionList component
 function QuestionList() {
@@ -10,7 +11,6 @@ function QuestionList() {
   const [comments, setComments] = useState([]); // Array of comments for the current question
   const [newComment, setNewComment] = useState(''); // Text of the new comment being added
   const [username, setUsername] = useState('')
-
 
 
 
@@ -75,6 +75,7 @@ function QuestionList() {
   // Define a function to handle the back button click event
   const handleBackButtonClick = () => {
     // Reset the question state variable to null
+   
     setQuestion(null);
   };
 

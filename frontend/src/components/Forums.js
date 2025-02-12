@@ -4,6 +4,7 @@ import SideBar from './SideBar'
 import QuestionList from './QuestionList'
 import EntireForum from './EntireForum'
 import RightComponent from './RightComponent'
+import SearchResults from './SearchResults'
 
 function Forums() {
   const [content, setContent] = useState(<QuestionList />)

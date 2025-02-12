@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<SignIn_Up />} />
-          <Route path= "/forum" element= {<Forums />} />
+          <Route path= "/forum/*" element= {<Forums />} />
         </Routes>
       </Router>
     </div>

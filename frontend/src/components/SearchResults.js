@@ -1,6 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import QuestionList from './QuestionList';
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, onContentChange }) => {
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate('/forum');
+    console.log('Back to forum');
+    
+  }
   return (
     <div className='search-results'>
       <ul>
@@ -12,6 +21,7 @@ const SearchResults = ({ results }) => {
           </li>
         ))}
       </ul>
+      <button onClick={()=>handleBack()}>Back</button>
     </div>
   );
 };

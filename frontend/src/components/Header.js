@@ -9,6 +9,12 @@ const Header = ({ onContentChange }) => {
   const [searchResults, setSearchResults] = useState([]);
 
   const navigate = useNavigate();
+  const handleNavigation = (path) => {
+    navigate(path);
+    onContentChange(null); // Clear content if needed
+  };
+
+  
   const handleLogOut = () => {
     navigate('/');
   };
@@ -30,6 +36,7 @@ const Header = ({ onContentChange }) => {
   };
 
   const handleSearchButtonClick = () => {
+    handleNavigation('/forum/search');
     onContentChange(<SearchResults results={searchResults} />); // Pass searchResults as a prop
   };
 
